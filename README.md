@@ -34,5 +34,3 @@ Restart your server, unless you used the `.htaccess` file, and type a random URL
 Send me an email at aboutscript@gmail.com.
 
 
-
-
