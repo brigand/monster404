@@ -54,9 +54,11 @@
                 'z-index': '100'
             }).animate(anim, 2000);
             if (side === 'left')
-                url = 'http://www.google.com/search?ie=UTF-8&oe=UTF-8&btnI=1'
-                        + '&sitesearch=' + location.hostname
-                        + '&q=' + encodeURIComponent(location.pathname.substring(1) + location.search);
+                url = 'https://duckduckgo.com/?q='
+                  + encodeURIComponent(
+                    '!ducky ' + location.pathname.substring(1) 
+                    + 'site:' + location.search
+                    );
             else
                 url = '/';
 
