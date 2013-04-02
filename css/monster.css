@@ -1,0 +1,161 @@
+html, body {
+    height: 100%;
+    background-color: black;
+    background-image: url('../img/blacktex.gif');
+}
+
+.monster {
+    text-align: center;
+    margin: 220px 100px 100px 100px;
+    padding: 50px;
+    position: relative;
+    border-color: #a00000;
+    border-left-width: 50px;
+    border-right-width: 50px;
+    border-top-width: 0;
+    border-bottom-width: 50px;
+    border-style: solid;
+    box-sizing: border-box;
+    background: black;
+    color: white;
+}
+
+.monster h1 {
+    color: #696969;
+    font-family: monospace;
+}
+
+.monster p {
+    color: #ff0005;
+    font-family: "Droid Sans", Arial, sans-serif;
+    font-weight: bold;
+}
+
+.monster .bottombg, .monster .topbg, .monster .leftbg, .monster .rightbg {
+    z-index: -5;
+}
+
+.monster .monsterbg {
+    position: absolute;
+    top: -200px;
+    left: -50px;
+    background: #a00000;
+    height: 200px;
+    width: 100%;
+    padding-right: 50px;
+    padding-left: 50px;
+    z-index: -3;
+    border-radius: 250px 250px 0 0;
+}
+
+.monsterbg .eye {
+    position: absolute;
+    top: 25px;
+    left: 200px;
+    width: 150px;
+    height: 150px;
+    background-image: url("../img/eye.gif");
+    box-shadow: 0 0 30px black;
+    border-radius: 50%;
+    cursor: crosshair;
+}
+
+.monsterbg .eye:hover {
+    box-shadow: 0 0 60px black;
+}
+
+.monsterbg .eye.r {
+    left: auto;
+    right: 200px;
+}
+
+.monster .uptooth {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url("../img/up_tooth.gif");
+    background-repeat: repeat-x;
+}
+
+
+.monster .downtooth {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url("../img/down_tooth.gif");
+    background-repeat: repeat-x;
+}
+
+@media (min-height: 600px) {
+    .monster {
+        margin-top: 280px;
+    }
+}
+
+@media (max-width: 924px) {
+    .monster { margin-left: 0; margin-right: 0; }
+    .monsterbg .eye.r {
+        display: none;
+    }
+
+    .monsterbg .eye.l {
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25px;
+    }
+
+    .big {
+        display: none;
+    }
+
+    .pullleft, .pullright {
+        float: none;
+        clear: both;
+        width: 100%;
+    }
+
+    .pullright {
+        margin-bottom: 20px;
+    }
+
+    #gohome {
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 925px) {
+    .small {
+        display: none;
+    }
+}
+
+.pullleft, .pullright {
+    padding: .6em 0;
+    border-top: 1px solid gray;
+}
+
+.pullleft {
+    float: left;
+}
+
+.pullright {
+    float:right;
+}
+
+.pullright:after {
+    clear: both;
+}
+
+::selection {
+    background: #000;
+    color: purple;
+}
+::-moz-selection {
+    background: #000;
+    color: purple;
+}

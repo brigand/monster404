@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>404 - No Pages, Just Monsters</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="/404/css/monster.css" rel="stylesheet">
+
+  </head>
+
+<body>
+<div class="monster">
+      <div>
+        <h1>404</h1>
+        <p>Are you sure this is the right place?</p>
+        <div class="pullleft">
+            Click
+            <span class="big">this</span> <span class="small">the</span>
+            eye to take our best guess
+        </div>
+        <div class="pullright" id="gohome">
+            Click
+            <span class="big">this eye</span> <span class="small">here</span>
+            to go home
+        </div>
+        <br style="clear:both">
+      </div>
+
+
+    <div class="uptooth"></div>
+    <div class="downtooth"></div>
+    <div class="monsterbg">
+        <div class="eye r"></div>
+        <div class="eye l"></div>
+    </div>
+</div>
+    <script src="/404/js/jquery.js"></script>
+    <script>
+        $('.eye').click(function(){
+            var $t = $(this), side, anim = {}, url, location = window.location;
+            if ($t.hasClass('r')) {
+                side = 'right';
+            }
+            else {
+                side = 'left';
+            }
+
+            anim[side] = '-400';
+
+            $t.css({
+                'z-index': '100'
+            }).animate(anim, 2000);
+            if (side === 'left')
+                url = 'http://www.google.com/search?ie=UTF-8&oe=UTF-8&btnI=1'
+                        + '&sitesearch=' + location.hostname
+                        + '&q=' + encodeURIComponent(location.pathname.substring(1) + location.search);
+            else
+                url = '/';
+
+            setTimeout(function(){window.location.href = url;}, 1000);
+        });
+
+        $('#gohome').click(function(){
+            window.location.href = '/';
+        });
+    </script>
+</body>
+</html>
